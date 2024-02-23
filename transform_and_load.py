@@ -43,7 +43,7 @@ print(df.head)
 
 conn_string = 'postgresql://postgres:postgres@localhost/mekari_salary'
 db = create_engine(conn_string)
-df.to_sql('testing_result', con=db, if_exists='replace', method="multi",
+df.to_sql('testing_result', con=db, if_exists='append', method="multi",
           index=False,
           dtype={'salary_u': sqlalchemy.types.INTEGER(), 
                    'branch_id': sqlalchemy.types.VARCHAR(),
